@@ -1,0 +1,6 @@
+@media (max-width: 1140px) {
+    .stackable-layout.right-open:not(.left-focused) .css-qzdn6e {
+        display: block !important;
+    }
+}
+
