@@ -43,14 +43,12 @@ style.textContent = `
     .blink {
         animation: blink 3s infinite;
         font-size: 12px;
-	border: 1px solid white;
+  border: 1px solid white;
     }
     .blink2 {
-        animation: blink 0.9s infinite;
+        animation: blink 0.3s infinite;
         font-size: 15px;
-	border: 1px solid white;
-	font-weight: 900;
-}
+  border: 1px solid white;
     }
 .css-19u39ph {
     border: 2px solid white;
@@ -76,9 +74,9 @@ document.querySelectorAll('.lc-Typography-module__paragraph-sm___QIEFL').forEach
     if (colorSets.yellow.has(text)) {
         div.style.color = 'yellow';
     } else if (colorSets.orange.has(text)) {
-        div.style.color = 'orange';
+        div.style.color = '#ee00ff';
     } else if (colorSets.red.has(text)) {
-        div.style.color = '#ff9d9d';
+        div.style.color = '#ff645e';
         div.classList.add('blink2');
     } else {
         div.style.color = 'white';
