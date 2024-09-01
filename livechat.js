@@ -31,7 +31,7 @@ flex-direction: row;
         }
     }
     .css-qzdn6e, .css-7eezsw {
-        background: url(https://mattsko.com/wp-content/uploads/2018/04/japanese-art-rain-gif.gif);
+        background: #000;
     }
     .css-u4cohp, .css-10qrzi9, .css-14yrzxm, .css-xbdb0k {
         background: #065547;
