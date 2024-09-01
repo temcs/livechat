@@ -10,7 +10,7 @@ style.textContent = `
 
 @media (min-width: 768px) {
 .col-sm-12 {
-width: 40%;
+width: 50%;
 }
 }
 .imgParent{
@@ -18,6 +18,11 @@ max-width: 100%;
 display: flex;
 flex-direction: row;
 }
+
+label[for="frontpathBE"], label[for="backpathBE"] {
+    display: none;
+}
+
 
 // livechat code 
 
