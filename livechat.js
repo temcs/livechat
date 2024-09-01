@@ -1,6 +1,23 @@
 // Create and append <style> element
 const style = document.createElement('style');
 style.textContent = `
+
+// backoffice code 
+
+@media (min-width: 768px) {
+    .col-sm-12 {
+        width: 40%;
+    }
+}
+
+
+.form-group imgParent{
+  max-width: 100%;
+    display: flex;
+}
+
+// livechat code 
+
     ::selection {
         color: red;
         background: yellow;
