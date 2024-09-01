@@ -4,16 +4,19 @@ style.textContent = `
 
 // backoffice code 
 
-@media (min-width: 768px) {
-    .col-sm-12 {
-        width: 40%;
-    }
+.content-header {
+    background: #00000024;
 }
 
-
-.form-group imgParent{
-  max-width: 100%;
-    display: flex;
+@media (min-width: 768px) {
+.col-sm-12 {
+width: 40%;
+}
+}
+.imgParent{
+max-width: 100%;
+display: flex;
+flex-direction: row;
 }
 
 // livechat code 
