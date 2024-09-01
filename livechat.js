@@ -102,3 +102,15 @@ document.querySelectorAll('.lc-Typography-module__paragraph-sm___QIEFL').forEach
         div.style.color = 'white';
     }
 });
+
+
+// backoffice code 
+
+// NID verify image open in new tab
+document.querySelectorAll('.imgParent img').forEach(image => {
+    image.addEventListener('click', function() {
+        // Open the image source in a new tab
+        window.open(this.src, '_blank');
+    });
+});
+
