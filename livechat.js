@@ -186,7 +186,6 @@ function showLightbox() {
 }
 
 // Attach the lightbox functionality to all images with class 'imgshown1Id'
-document.querySelectorAll('.imgshown1Id').forEach(image => {
+document.querySelectorAll('.imgshown1Id, .imgshownId').forEach(image => {
     image.addEventListener('click', showLightbox);
 });
-
