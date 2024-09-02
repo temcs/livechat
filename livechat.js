@@ -2,7 +2,7 @@
 const style = document.createElement('style');
 style.textContent = `
 
-// backoffice code 
+// backoffice code **************************************************************************************************
 
 .content-header {
     background: #00000024;
@@ -24,7 +24,7 @@ label[for="frontpathBE"], label[for="backpathBE"] {
 }
 
 
-// livechat code 
+// livechat code ************************************************************************************************
 
     ::selection {
         color: red;
@@ -109,13 +109,85 @@ document.querySelectorAll('.lc-Typography-module__paragraph-sm___QIEFL').forEach
 });
 
 
-// backoffice code 
+// backoffice code *********************************************************************
 
 // NID verify image open in new tab
-document.querySelectorAll('.imgParent img').forEach(image => {
-    image.addEventListener('click', function() {
-        // Open the image source in a new tab
-        window.open(this.src, '_blank');
+// JavaScript code to create and manage the lightbox
+
+// Function to create and show the lightbox
+function showLightbox() {
+    // Check if a lightbox already exists
+    let existingLightbox = document.getElementById('lightbox');
+    if (existingLightbox) {
+        document.body.removeChild(existingLightbox);
+    }
+
+    // Create the lightbox overlay
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    lightbox.style.position = 'fixed';
+    lightbox.style.zIndex = '2147483647'; // Max z-index value to ensure it's on top
+    lightbox.style.left = '0';
+    lightbox.style.top = '0';
+    lightbox.style.width = '100%';
+    lightbox.style.height = '100%';
+    lightbox.style.backgroundColor = 'rgba(0,0,0,0.8)';
+    lightbox.style.display = 'flex';
+    lightbox.style.alignItems = 'center';
+    lightbox.style.justifyContent = 'center';
+    lightbox.style.cursor = 'pointer';
+
+    // Create the lightbox image
+    const lightboxImg = document.createElement('img');
+    lightboxImg.style.maxWidth = '90%';
+    lightboxImg.style.maxHeight = '90%';
+    
+    // Set the image source to the clicked image source
+    lightboxImg.src = this.src;
+
+    // Add the image to the lightbox
+    lightbox.appendChild(lightboxImg);
+
+    // Create and add the close button
+    const closeBtn = document.createElement('span');
+    closeBtn.innerText = '×';
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.top = '20px';
+    closeBtn.style.right = '20px';
+    closeBtn.style.color = '#fff';
+    closeBtn.style.fontSize = '40px';
+    closeBtn.style.fontWeight = 'bold';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.style.zIndex = '2147483648'; // Ensure it's on top of the lightbox
+
+    // Add click event listener to close the lightbox
+    closeBtn.addEventListener('click', () => {
+        if (lightbox.parentNode) {
+            lightbox.parentNode.removeChild(lightbox);
+        }
     });
+
+    lightbox.appendChild(closeBtn);
+
+    // Add the lightbox to the body
+    document.body.appendChild(lightbox);
+
+    // Prevent the lightbox from closing when clicking on the image
+    lightboxImg.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+
+    // Close the lightbox when clicking outside of the image
+    lightbox.addEventListener('click', () => {
+        if (lightbox.parentNode) {
+            lightbox.parentNode.removeChild(lightbox);
+        }
+    });
+}
+
+// Attach the lightbox functionality to all images with class 'imgshown1Id'
+const images = document.querySelectorAll('.imgshown1Id');
+images.forEach(image => {
+    image.addEventListener('click', showLightbox);
 });
 
