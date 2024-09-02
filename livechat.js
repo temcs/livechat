@@ -141,7 +141,7 @@ function showLightbox() {
     const lightboxImg = document.createElement('img');
     lightboxImg.style.maxWidth = '90%';
     lightboxImg.style.maxHeight = '90%';
-    
+
     // Set the image source to the clicked image source
     lightboxImg.src = this.src;
 
@@ -186,8 +186,7 @@ function showLightbox() {
 }
 
 // Attach the lightbox functionality to all images with class 'imgshown1Id'
-const images = document.querySelectorAll('.imgshown1Id');
-images.forEach(image => {
+document.querySelectorAll('.imgshown1Id').forEach(image => {
     image.addEventListener('click', showLightbox);
 });
 
