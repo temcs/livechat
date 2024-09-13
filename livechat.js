@@ -79,14 +79,27 @@ label[for="frontpathBE"], label[for="backpathBE"] {
     border: 2px solid white;
 }
 
-
-.css-1h9c9yl {
-    min-width: 300px;
-    min-height: 500px;
-}
-
 `;
 document.head.appendChild(style);
+
+
+// Select the image inside the div with data-testid="image-attachment"
+var img = document.querySelector('div[data-testid="image-attachment"] img');
+
+// Check if the image element is found
+if (img) {
+    // Set the dimensions of the container (optional)
+    var container = img.parentElement;
+    container.style.width = '250px'; // Desired width of the container
+    container.style.height = '300px'; // Desired height of the container
+
+    // Apply styles to the image to make it fit the container while preserving aspect ratio
+    img.style.width = '100%';
+    img.style.height = '100%';
+    img.style.objectFit = 'cover'; // Or use 'cover' to fill the container and crop if necessary
+} else {
+    console.error('Image not found');
+}
 
 // Define color categories and sets
 const colorSets = {
