@@ -83,8 +83,6 @@ label[for="frontpathBE"], label[for="backpathBE"] {
 .css-1h9c9yl {
     min-width: 300px;
     min-height: 500px;
-    overflow: hidden;
-    scale: 5;
 }
 
 `;
