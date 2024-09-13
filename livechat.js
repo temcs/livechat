@@ -79,6 +79,14 @@ label[for="frontpathBE"], label[for="backpathBE"] {
     border: 2px solid white;
 }
 
+
+.css-1h9c9yl {
+    min-width: 300px;
+    min-height: 500px;
+    overflow: hidden;
+    scale: 5;
+}
+
 `;
 document.head.appendChild(style);
 
