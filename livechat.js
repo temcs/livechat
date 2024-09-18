@@ -30,6 +30,9 @@ label[for="frontpathBE"], label[for="backpathBE"] {
         color: red;
         background: yellow;
     }
+    .css-8uygdv .animate-enter-done {
+    height: 25px;
+    }
     @media (max-width: 1140px) {
         .stackable-layout.right-open:not(.left-focused) .css-qzdn6e {
             display: block;
