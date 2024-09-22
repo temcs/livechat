@@ -194,3 +194,26 @@ function showLightbox() {
 document.querySelectorAll('.imgshown1Id, .imgshownId').forEach(image => {
     image.addEventListener('click', showLightbox);
 });
+
+
+
+
+
+// In the livechat.js file, add the global flag
+window.liveChatStylesLoaded = window.liveChatStylesLoaded || false;
+
+if (!window.liveChatStylesLoaded) {
+    window.liveChatStylesLoaded = true; // Set the flag to true
+
+    // Existing code in livechat.js
+    const style = document.createElement('style');
+    style.id = 'livechat-style'; // Add an ID to ensure no duplicate styles
+    style.textContent = `
+        /* Your CSS styles */
+        .css-19u39ph {
+            border: 2px solid white;
+        }
+        /* Additional styles can go here */
+    `;
+    document.head.appendChild(style); // Append the style to the head
+}
