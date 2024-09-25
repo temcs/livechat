@@ -95,7 +95,7 @@ const colorSets = {
 };
 
 // Select divs and update their color
-document.querySelectorAll('.lc-Typography-module__paragraph-sm___QIEFL').forEach(div => {
+document.querySelectorAll('.lc-Typography-module__paragraph-sm___5KRhm').forEach(div => {
     const text = div.innerText.trim();
     div.style.color = '';
     div.style.outline = '';
