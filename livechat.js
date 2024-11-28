@@ -26,6 +26,15 @@ label[for="frontpathBE"], label[for="backpathBE"] {
 
 // livechat code ************************************************************************************************
 
+// Select the div element
+const divElement = document.querySelector('.css-1uw9242');  // Replace with a more specific selector if needed
+
+// Add a new class
+divElement.classList.add('.left-focused');  // Replace 'new-class-name' with your desired class
+divElement.classList.remove('.middle-focused');
+
+
+
     ::selection {
         color: red;
         background: yellow;
