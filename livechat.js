@@ -26,13 +26,14 @@ label[for="frontpathBE"], label[for="backpathBE"] {
 
 // livechat code ************************************************************************************************
 
-// Select the div element
-const divElement = document.querySelector('.css-1uw9242');  // Replace with a more specific selector if needed
+// Correctly select the div element
+const divElement = document.querySelector('.css-1uw9242.stackable-layout'); // Combine selectors without a comma
 
-// Add a new class
-divElement.classList.add('.left-focused');  // Replace 'new-class-name' with your desired class
-divElement.classList.remove('.middle-focused');
+// Add a new class (without the dot)
+divElement.classList.add('left-focused');  // Remove the dot before 'left-focused'
 
+// Remove a class (without the dot)
+divElement.classList.remove('middle-focused');  // Remove the dot before 'middle-focused'
 
 
     ::selection {
