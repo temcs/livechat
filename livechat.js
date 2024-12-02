@@ -2,7 +2,7 @@
 const style = document.createElement('style');
 style.textContent = `
 
-// backoffice code **************************************************************************************************
+/* backoffice code **************************************************************************************************/
 
 .content-header {
     background: #00000024;
@@ -22,19 +22,6 @@ flex-direction: row;
 label[for="frontpathBE"], label[for="backpathBE"] {
     display: none;
 }
-
-
-// livechat code ************************************************************************************************
-
-// Correctly select the div element
-const divElement = document.querySelector('.css-1uw9242.stackable-layout'); // Combine selectors without a comma
-
-// Add a new class (without the dot)
-divElement.classList.add('left-focused');  // Remove the dot before 'left-focused'
-
-// Remove a class (without the dot)
-divElement.classList.remove('middle-focused');  // Remove the dot before 'middle-focused'
-
 
     ::selection {
         color: red;
@@ -92,6 +79,11 @@ divElement.classList.remove('middle-focused');  // Remove the dot before 'middle
     border: 2px solid white;
 }
 
+/* Sales Smartly code **************************************************************************************************/
+.ivu-table-header{
+    display: noone;
+}
+
 `;
 document.head.appendChild(style);
 
@@ -123,9 +115,17 @@ document.querySelectorAll('.lc-Typography-module__paragraph-sm___5KRhm').forEach
     }
 });
 
+// livechat code ************************************************************************************************
+
+// Correctly select the div element
+const divElement = document.querySelector('.css-1uw9242.stackable-layout'); // Combine selectors without a comma
+// Add a new class (without the dot)
+divElement.classList.add('left-focused');  // Remove the dot before 'left-focused'
+// Remove a class (without the dot)
+divElement.classList.remove('middle-focused');  // Remove the dot before 'middle-focused'
+
 
 // backoffice code *********************************************************************
-
 // NID verify image open in new tab
 // JavaScript code to create and manage the lightbox
 
