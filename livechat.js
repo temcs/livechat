@@ -194,3 +194,12 @@ function showLightbox() {
 document.querySelectorAll('.imgshown1Id, .imgshownId').forEach(image => {
     image.addEventListener('click', showLightbox);
 });
+
+// livechat code************************************************************************************************
+
+// Correctly select the div element
+const divElement = document.querySelector('.css-1uw9242.stackable-layout'); // Combine selectors without a comma
+// Add a new class (without the dot)
+divElement.classList.add('left-focused');  // Remove the dot before 'left-focused'
+// Remove a class (without the dot)
+divElement.classList.remove('middle-focused');  // Remove the dot before 'middle-focused'
