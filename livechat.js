@@ -146,6 +146,7 @@ function showLightbox() {
     const lightboxImg = document.createElement('img');
     lightboxImg.style.maxWidth = '90%';
     lightboxImg.style.maxHeight = '90%';
+    lightboxImg.style.transition = 'transform 0.3s ease'; // Smooth zoom effect
 
     // Set the image source to the clicked image source
     lightboxImg.src = this.src;
@@ -188,12 +189,26 @@ function showLightbox() {
             lightbox.parentNode.removeChild(lightbox);
         }
     });
+
+    // Zoom functionality
+    let isZoomed = false; // Track zoom state
+    lightboxImg.addEventListener('click', () => {
+        isZoomed = !isZoomed;
+        if (isZoomed) {
+            // Zoom in
+            lightboxImg.style.transform = 'scale(2)'; // Adjust the scale as needed
+        } else {
+            // Reset to original size
+            lightboxImg.style.transform = 'scale(1)';
+        }
+    });
 }
 
-// Attach the lightbox functionality to all images with class 'imgshown1Id'
+// Attach the lightbox functionality to all images with class 'imgshown1Id' and 'imgshownId'
 document.querySelectorAll('.imgshown1Id, .imgshownId').forEach(image => {
     image.addEventListener('click', showLightbox);
 });
+
 
 // livechat code************************************************************************************************
 
