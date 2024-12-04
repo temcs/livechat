@@ -139,6 +139,8 @@ function showLightbox() {
     lightbox.style.backgroundColor = 'rgba(0,0,0,0.8)';
     lightbox.style.overflow = 'auto'; // Enable scrolling for zoomed image
     lightbox.style.cursor = 'pointer';
+    lightbox.style.display = 'flex';
+    lightbox.style.justifyContent = 'center';
 
     // Create the lightbox image
     const lightboxImg = document.createElement('img');
@@ -196,7 +198,7 @@ function showLightbox() {
         isZoomed = !isZoomed;
         if (isZoomed) {
             // Zoom in
-            lightboxImg.style.transform = 'scale(3)'; // Scale to 3x
+            lightboxImg.style.transform = 'scale(4)'; // Scale to 3x
             lightbox.style.cursor = 'move'; // Change cursor to indicate scrollable content
         } else {
             // Reset to original size
