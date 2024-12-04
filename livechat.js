@@ -134,8 +134,8 @@ function showLightbox() {
     lightbox.style.zIndex = '2147483647'; // Max z-index value to ensure it's on top
     lightbox.style.left = '0';
     lightbox.style.top = '0';
-    lightbox.style.width = '100%';
-    lightbox.style.height = '100%';
+    lightbox.style.width = 'auto';
+    lightbox.style.height = 'hidden';
     lightbox.style.backgroundColor = 'rgba(0,0,0,0.8)';
     lightbox.style.overflow = 'auto'; // Enable scrolling for zoomed image
     lightbox.style.cursor = 'pointer';
