@@ -137,16 +137,16 @@ function showLightbox() {
     lightbox.style.width = '100%';
     lightbox.style.height = '100%';
     lightbox.style.backgroundColor = 'rgba(0,0,0,0.8)';
-    lightbox.style.display = 'flex';
-    lightbox.style.alignItems = 'center';
-    lightbox.style.justifyContent = 'center';
+    lightbox.style.overflow = 'auto'; // Enable scrolling for zoomed image
     lightbox.style.cursor = 'pointer';
 
     // Create the lightbox image
     const lightboxImg = document.createElement('img');
-    lightboxImg.style.maxWidth = '90%';
-    lightboxImg.style.maxHeight = '90%';
+    lightboxImg.style.maxWidth = '100%';
+    lightboxImg.style.maxHeight = '100%';
     lightboxImg.style.transition = 'transform 0.3s ease'; // Smooth zoom effect
+    lightboxImg.style.transformOrigin = 'center'; // Zoom from the center
+    lightboxImg.style.display = 'block'; // Avoid inline display issues
 
     // Set the image source to the clicked image source
     lightboxImg.src = this.src;
@@ -196,10 +196,12 @@ function showLightbox() {
         isZoomed = !isZoomed;
         if (isZoomed) {
             // Zoom in
-            lightboxImg.style.transform = 'scale(2)'; // Adjust the scale as needed
+            lightboxImg.style.transform = 'scale(3)'; // Scale to 3x
+            lightbox.style.cursor = 'move'; // Change cursor to indicate scrollable content
         } else {
             // Reset to original size
             lightboxImg.style.transform = 'scale(1)';
+            lightbox.style.cursor = 'pointer'; // Reset cursor
         }
     });
 }
@@ -208,6 +210,7 @@ function showLightbox() {
 document.querySelectorAll('.imgshown1Id, .imgshownId').forEach(image => {
     image.addEventListener('click', showLightbox);
 });
+
 
 
 // livechat code************************************************************************************************
