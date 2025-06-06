@@ -9,89 +9,102 @@ style.textContent = `
 }
 
 @media (min-width: 768px) {
-.col-sm-12 {
-width: 50%;
+    .col-sm-12 {
+        width: 50%;
+    }
 }
-}
-.imgParent{
-max-width: 100%;
-display: flex;
-flex-direction: row;
+
+.imgParent {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 label[for="frontpathBE"], label[for="backpathBE"] {
     display: none;
 }
 
-    ::selection {
-        color: red;
-        background: yellow;
-    }
-    .css-8uygdv .animate-enter-done {
+::selection {
+    color: red;
+    background: yellow;
+}
+
+.css-8uygdv .animate-enter-done {
     height: 25px;
+}
+
+@media (max-width: 1140px) {
+    .stackable-layout.right-open:not(.left-focused) .css-qzdn6e {
+        display: block;
     }
-    @media (max-width: 1140px) {
-        .stackable-layout.right-open:not(.left-focused) .css-qzdn6e {
-            display: block;
-        }
-    }
-    .css-qzdn6e, .css-7eezsw {
-        background: #000;
-    }
-    .css-u4cohp, .css-10qrzi9, .css-14yrzxm, .css-xbdb0k {
-        background: #065547;
-    }
-    .css-u4cohp:hover, .css-10qrzi9:hover, .css-14yrzxm:hover, .css-xbdb0k:hover {
-        background: #006d5a;
-    }
-    .css-1hu008m, .css-16ranto, .css-y77xyk, .css-188ons9 {
-        background: #5f104d;
-    }
-    .css-1hu008m:hover, .css-16ranto:hover, .css-y77xyk:hover, .css-188ons9:hover {
-        background: #710358;
-    }
-    .css-1tonxl6 {
-        background: #00adbd;
-    }
-    .css-1tonxl6:hover {
-        background: #05d0e3;
-    }
-    .lc-Badge-module__badge--primary___8LRpp {
-        font-size: 10px;
-        width: 10px;
-        height: 20px;
-    }
-    @keyframes blink {
-        0%, 20%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-    }
-    .blink {
-        animation: blink 3s infinite;
-        font-size: 12px;
-  border: 1px solid white;
-    }
-    .blink2 {
-        animation: blink 0.3s infinite;
-        font-size: 15px;
-  border: 1px solid white;
-    }
+}
+
+.css-qzdn6e, .css-7eezsw {
+    background: #000;
+}
+
+.css-u4cohp, .css-10qrzi9, .css-14yrzxm, .css-xbdb0k {
+    background: #065547;
+}
+
+.css-u4cohp:hover, .css-10qrzi9:hover, .css-14yrzxm:hover, .css-xbdb0k:hover {
+    background: #006d5a;
+}
+
+.css-1hu008m, .css-16ranto, .css-y77xyk, .css-188ons9 {
+    background: #5f104d;
+}
+
+.css-1hu008m:hover, .css-16ranto:hover, .css-y77xyk:hover, .css-188ons9:hover {
+    background: #710358;
+}
+
+.css-1tonxl6 {
+    background: #00adbd;
+}
+
+.css-1tonxl6:hover {
+    background: #05d0e3;
+}
+
+.lc-Badge-module__badge--primary___8LRpp {
+    font-size: 10px;
+    width: 10px;
+    height: 20px;
+}
+
+@keyframes blink {
+    0%, 20%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.blink {
+    animation: blink 3s infinite;
+    font-size: 12px;
+    border: 1px solid white;
+}
+
+.blink2 {
+    animation: blink 0.3s infinite;
+    font-size: 15px;
+    border: 1px solid white;
+}
+
 .css-19u39ph {
     border: 2px solid white;
 }
 
 /* Sales Smartly code **************************************************************************************************/
-.ivu-table-header{
-    display: noone;
+.ivu-table-header {
+    display: none;
 }
-
 `;
 document.head.appendChild(style);
 
 
-
 // Define color categories and sets
 const colorSets = {
-    yellow: new Set(['50s', '51s', '52s', '53s', '54s', '55s', '56s', '57s', '58s', '59s','1m']),
+    yellow: new Set(['50s', '51s', '52s', '53s', '54s', '55s', '56s', '57s', '58s', '59s', '1m']),
     orange: new Set(['2m']),
     red: new Set(['3m', '4m', '5m', '6m', '7m', '8m', '9m', '10m'])
 };
@@ -115,133 +128,93 @@ document.querySelectorAll('.lc-Typography-module__paragraph-sm___5KRhm').forEach
     }
 });
 
-// backoffice code *********************************************************************
-// NID verify image open in new tab
-// JavaScript code to create and manage the lightbox
-
-// Function to create and show the lightbox
+// NID verify image open in new tab with lightbox
 function showLightbox() {
-    // Check if a lightbox already exists
     let existingLightbox = document.getElementById('lightbox');
     if (existingLightbox) {
         document.body.removeChild(existingLightbox);
     }
 
-    // Create the lightbox overlay
     const lightbox = document.createElement('div');
     lightbox.id = 'lightbox';
-    lightbox.style.position = 'fixed';
-    lightbox.style.zIndex = '2147483647'; // Max z-index value to ensure it's on top
-    lightbox.style.left = '0';
-    lightbox.style.top = '0';
-    lightbox.style.width = '100%';
-    lightbox.style.height = '100%';
-    lightbox.style.backgroundColor = 'rgba(0,0,0,0.8)';
-    lightbox.style.overflow = 'auto'; // Enable scrolling for zoomed image
-    lightbox.style.cursor = 'pointer';
-    lightbox.style.display = 'flex';
-    lightbox.style.justifyContent = 'center';
+    Object.assign(lightbox.style, {
+        position: 'fixed',
+        zIndex: '2147483647',
+        left: '0',
+        top: '0',
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'rgba(0,0,0,0.8)',
+        overflow: 'auto',
+        cursor: 'pointer',
+        display: 'flex',
+        justifyContent: 'center'
+    });
 
-    // Create the lightbox image
     const lightboxImg = document.createElement('img');
-    lightboxImg.style.maxWidth = '100%';
-    lightboxImg.style.maxHeight = '100%';
-    lightboxImg.style.transition = 'transform 0.3s ease'; // Smooth zoom effect
-    lightboxImg.style.transformOrigin = 'center'; // Zoom from the center
-    lightboxImg.style.display = 'block'; // Avoid inline display issues
-
-    // Set the image source to the clicked image source
+    Object.assign(lightboxImg.style, {
+        maxWidth: '100%',
+        maxHeight: '100%',
+        transition: 'transform 0.3s ease',
+        transformOrigin: 'center',
+        display: 'block'
+    });
     lightboxImg.src = this.src;
 
-    // Add the image to the lightbox
     lightbox.appendChild(lightboxImg);
 
-    // Create and add the close button
     const closeBtn = document.createElement('span');
     closeBtn.innerText = '×';
-    closeBtn.style.position = 'absolute';
-    closeBtn.style.top = '20px';
-    closeBtn.style.right = '20px';
-    closeBtn.style.color = '#fff';
-    closeBtn.style.fontSize = '40px';
-    closeBtn.style.fontWeight = 'bold';
-    closeBtn.style.cursor = 'pointer';
-    closeBtn.style.zIndex = '2147483648'; // Ensure it's on top of the lightbox
-
-    // Add click event listener to close the lightbox
-    closeBtn.addEventListener('click', () => {
-        if (lightbox.parentNode) {
-            lightbox.parentNode.removeChild(lightbox);
-        }
+    Object.assign(closeBtn.style, {
+        position: 'absolute',
+        top: '20px',
+        right: '20px',
+        color: '#fff',
+        fontSize: '40px',
+        fontWeight: 'bold',
+        cursor: 'pointer',
+        zIndex: '2147483648'
     });
-
+    closeBtn.addEventListener('click', () => lightbox.remove());
     lightbox.appendChild(closeBtn);
 
-    // Add the lightbox to the body
-    document.body.appendChild(lightbox);
+    lightboxImg.addEventListener('click', (event) => event.stopPropagation());
+    lightbox.addEventListener('click', () => lightbox.remove());
 
-    // Prevent the lightbox from closing when clicking on the image
-    lightboxImg.addEventListener('click', (event) => {
-        event.stopPropagation();
-    });
-
-    // Close the lightbox when clicking outside of the image
-    lightbox.addEventListener('click', () => {
-        if (lightbox.parentNode) {
-            lightbox.parentNode.removeChild(lightbox);
-        }
-    });
-
-    // Zoom functionality
-    let isZoomed = false; // Track zoom state
+    let isZoomed = false;
     lightboxImg.addEventListener('click', () => {
         isZoomed = !isZoomed;
-        if (isZoomed) {
-            // Zoom in
-            lightboxImg.style.transform = 'scale(2.5)'; // Scale to 3x
-            lightbox.style.cursor = 'move'; // Change cursor to indicate scrollable content
-        } else {
-            // Reset to original size
-            lightboxImg.style.transform = 'scale(1)';
-            lightbox.style.cursor = 'pointer'; // Reset cursor
-        }
+        lightboxImg.style.transform = isZoomed ? 'scale(2.5)' : 'scale(1)';
+        lightbox.style.cursor = isZoomed ? 'move' : 'pointer';
     });
+
+    document.body.appendChild(lightbox);
 }
 
-// Attach the lightbox functionality to all images with class 'imgshown1Id' and 'imgshownId'
+// Attach the lightbox to images
 document.querySelectorAll('.imgshown1Id, .imgshownId').forEach(image => {
     image.addEventListener('click', showLightbox);
 });
 
 
-
-// livechat code************************************************************************************************
-
-// Correctly select the div element
-const divElement = document.querySelector('.css-1uw9242.stackable-layout'); // Combine selectors without a comma
-// Add a new class (without the dot)
-divElement.classList.add('left-focused');  // Remove the dot before 'left-focused'
-// Remove a class (without the dot)
-divElement.classList.remove('middle-focused');  // Remove the dot before 'middle-focused'
+// 🟡 ✅ FIXED: Check if element exists before using classList
+const divElement = document.querySelector('.css-1uw9242.stackable-layout');
+if (divElement) {
+    divElement.classList.add('left-focused');
+    divElement.classList.remove('middle-focused');
+}
 
 
-
-
-
-//copy with control ************************************************************************************************
-
-
+// Ctrl + Click to copy text with popup
 document.addEventListener('click', function (e) {
-    if (e.ctrlKey && e.button === 0) { // Ctrl + Left Click
-        const target = e.target.closest('div');
-        if (target) {
-            const text = target.innerText;
+    if (e.ctrlKey && e.button === 0) {
+        const target = e.target;
+        const text = target.innerText || target.textContent;
 
-            // Copy text to clipboard
-            navigator.clipboard.writeText(text).then(() => {
-                // Create popup
+        if (text && text.trim() !== '') {
+            navigator.clipboard.writeText(text.trim()).then(() => {
                 const popup = document.createElement('div');
-                popup.textContent = 'Text Copied!';
+                popup.textContent = '✔️ Copied!';
                 Object.assign(popup.style, {
                     position: 'fixed',
                     top: '20px',
@@ -253,17 +226,17 @@ document.addEventListener('click', function (e) {
                     borderRadius: '5px',
                     boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
                     zIndex: 9999,
-                    transition: 'opacity 0.3s',
-                    opacity: '1'
+                    opacity: '1',
+                    transition: 'opacity 0.3s'
                 });
                 document.body.appendChild(popup);
-
                 setTimeout(() => {
                     popup.style.opacity = '0';
                     setTimeout(() => popup.remove(), 300);
-                }, 500);
+                }, 800);
+            }).catch(err => {
+                alert('❌ Copy failed: ' + err.message);
             });
         }
     }
 });
-
