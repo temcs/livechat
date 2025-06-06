@@ -96,35 +96,6 @@ document.addEventListener('click', function (e) {
         if (target) {
             const text = target.innerText;
 
-            // Copy text to clipboard
-            navigator.clipboard.writeText(text).then(() => {
-                // Create popup
-                const popup = document.createElement('div');
-                popup.textContent = 'Text Copied!';
-                Object.assign(popup.style, {
-                    position: 'fixed',
-                    top: '20px',
-                    right: '20px',
-                    padding: '10px 15px',
-                    background: '#28a745',
-                    color: '#fff',
-                    fontSize: '14px',
-                    borderRadius: '5px',
-                    boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
-                    zIndex: 9999,
-                    transition: 'opacity 0.3s',
-                    opacity: '1'
-                });
-                document.body.appendChild(popup);
-
-                setTimeout(() => {
-                    popup.style.opacity = '0';
-                    setTimeout(() => popup.remove(), 300);
-                }, 500);
-            });
-        }
-    }
-});
 
 // Define color categories and sets
 const colorSets = {
