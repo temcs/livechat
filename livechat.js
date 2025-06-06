@@ -223,3 +223,47 @@ const divElement = document.querySelector('.css-1uw9242.stackable-layout'); // C
 divElement.classList.add('left-focused');  // Remove the dot before 'left-focused'
 // Remove a class (without the dot)
 divElement.classList.remove('middle-focused');  // Remove the dot before 'middle-focused'
+
+
+
+
+
+//copy with control ************************************************************************************************
+
+
+document.addEventListener('click', function (e) {
+    if (e.ctrlKey && e.button === 0) { // Ctrl + Left Click
+        const target = e.target.closest('div');
+        if (target) {
+            const text = target.innerText;
+
+            // Copy text to clipboard
+            navigator.clipboard.writeText(text).then(() => {
+                // Create popup
+                const popup = document.createElement('div');
+                popup.textContent = 'Text Copied!';
+                Object.assign(popup.style, {
+                    position: 'fixed',
+                    top: '20px',
+                    right: '20px',
+                    padding: '10px 15px',
+                    background: '#28a745',
+                    color: '#fff',
+                    fontSize: '14px',
+                    borderRadius: '5px',
+                    boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
+                    zIndex: 9999,
+                    transition: 'opacity 0.3s',
+                    opacity: '1'
+                });
+                document.body.appendChild(popup);
+
+                setTimeout(() => {
+                    popup.style.opacity = '0';
+                    setTimeout(() => popup.remove(), 300);
+                }, 500);
+            });
+        }
+    }
+});
+
