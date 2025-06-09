@@ -1,6 +1,6 @@
-// Create and append <style> element
+// Create and append <style> elementMore actions
 const style = document.createElement('style');
-style.textContent = 
+style.textContent = `
 
 /* backoffice code **************************************************************************************************/
 
@@ -84,17 +84,9 @@ label[for="frontpathBE"], label[for="backpathBE"] {
     display: noone;
 }
 
-;
+`;
 document.head.appendChild(style);
 
-//copy with control ************************************************************************************************
-
-
-document.addEventListener('click', function (e) {
-    if (e.ctrlKey && e.button === 0) { // Ctrl + Left Click
-        const target = e.target.closest('div');
-        if (target) {
-            const text = target.innerText;
 
 
 // Define color categories and sets
